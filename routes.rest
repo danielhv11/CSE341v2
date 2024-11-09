@@ -1,0 +1,36 @@
+### GET all tasks
+GET http://localhost:3000/tasks
+
+###
+
+### GET a specific task by ID
+GET http://localhost:3000/tasks/66f8a3ae635863d10b941a68
+
+###
+
+### POST a new task
+POST http://localhost:3000/tasks
+Content-Type: application/json
+
+{
+  "title": "test number 3",
+  "description": "Description of the new task",
+  "status": "pending"
+}
+
+###
+
+### PUT update an existing task
+PUT http://localhost:3000/tasks/6702026c830e4885300d88a2
+Content-Type: application/json
+
+{
+  "title": "Updated Task Title",
+  "description": "Updated description of the task",
+  "status": "completed"
+}
+
+###
+
+### DELETE a task
+DELETE http://localhost:3000/tasks/6702026c830e4885300d88a2
