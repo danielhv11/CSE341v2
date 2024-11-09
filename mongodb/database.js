@@ -4,7 +4,7 @@ require('dotenv').config();
 const uri = process.env.MONGO_URI;
 let db;
 
-const client = new MongoClient(uri); // Removed deprecated options
+const client = new MongoClient(uri); 
 
 async function connectDB() {
     try {
@@ -13,7 +13,7 @@ async function connectDB() {
         console.log('Connected to MongoDB');
     } catch (err) {
         console.error('Failed to connect to MongoDB:', err);
-        throw err; // Rethrow the error for further handling if needed
+        throw err; 
     }
 }
 

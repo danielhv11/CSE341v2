@@ -1,12 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const { connectDB } = require('./mongodb/database');
-const tasksRoutes = require('./routes/tasks'); // Import tasks routes
-const commentsRoutes = require('./routes/comments'); // Import comments routes
+const tasksRoutes = require('./routes/tasks'); 
+const commentsRoutes = require('./routes/comments'); 
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
-const authRoutes = require('./routes/auth'); // Import auth routes
-const authenticateToken = require('./middleware/authMiddleware'); // Import auth middleware
+const authRoutes = require('./routes/auth');
+const authenticateToken = require('./middleware/authMiddleware'); 
 
 const app = express();
 
@@ -46,9 +46,9 @@ app.get('/', (req, res) => {
 });
 
 // Use routes with authentication middleware
-app.use('/tasks', authenticateToken, tasksRoutes); // Protect tasks routes
-app.use('/comments', authenticateToken, commentsRoutes); // Protect comments routes
-app.use('/auth', authRoutes); // Auth routes can remain unprotected
+app.use('/tasks', authenticateToken, tasksRoutes);
+app.use('/comments', authenticateToken, commentsRoutes); 
+app.use('/auth', authRoutes); 
 
 app.use((err, req, res, next) => {
     console.error(err.stack);

@@ -1,8 +1,8 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
-const { createUser, findUserByUsername, comparePassword } = require('../mongodb/user'); // Adjust path as needed
-const JWT_SECRET = 'your_jwt_secret'; // Use an environment variable in production
+const { createUser, findUserByUsername, comparePassword } = require('../mongodb/user'); 
+const JWT_SECRET = 'your_jwt_secret';
 
 /**
  * @swagger
